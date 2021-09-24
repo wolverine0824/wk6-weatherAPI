@@ -9,13 +9,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>wk6-WeatherApp</title>
 </head>
 <body>
     <div class="cards">
         <div class="search-box">
-            <input type="text" placeholder="">
-            <button class="btn btn-">search</button>
+           <!-- The form -->
+<form class="search-box" action="action_page.php">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
         </div>
         <div class="weather">
             <h2 class="city">Weather In Atlanta</h2>
