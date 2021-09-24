@@ -20,10 +20,6 @@ body {
     margin: 1em;
 }
 
-h1.temp {
-    margin: 0;
-}
-
 .search-box {
 display: flex;
 align-items: center;
@@ -56,4 +52,20 @@ input {
 
 button:hover {
     background: #7c7c7c2b
+}
+
+h1.temp {
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    text-transform: capitalize;
+    margin-left: 8px;
 }
