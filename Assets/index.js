@@ -1,15 +1,23 @@
-const weather = {
+  let weather = {
     apiKey: "8854f12c8ed8e64ffd06b1b0e0c9f7be",
-    fetchWeather: function ( city ) {
-        fetch( "https://api.openweathermap.org/data/2.5/weather?q=" +
-        city +
-        "&units=metric&appid=" +
-        this.apiKey
-        )
-            .then((response) => response.json())
-            .then ((data) => console.log (data));
+    fetchWeather: function (city) {
+      fetch(
+        "https://api.openweathermap.org/data/2.5/weather?q=" +
+          city +
+          "&units=metric&appid=" +
+          this.apiKey
+      )
+        .then((response) => {
+          if (!response.ok) {
+            alert("No weather found.");
+            throw new Error("No weather found.");
+          }
+          return response.json();
+        })
+        //.then((data) => this.displayWeather(data));
     },
-    disableWeather: function ( data ) {
+
+    disablayWeather: function ( data ) {
         const { name } = data;
         const { icon, description } = data.weather[0];
         const { temp, humidity } = data.main;
@@ -22,6 +30,9 @@ const weather = {
         document.querySelector(".temp").innerText = temp + "°c";
         document.querySelector(".humidity").innerText = "humidity: " + humidity + "°c";
         document.querySelector(".wind").innerText = "wind speed: " + speed + "km/h";
+        document.querySelector(".weather").classList.remove("loading");
+        document.body.style.backgroundImage =
+        "url('https://source.unsplash.com/1600x900/?" + name + "')";
     },
 
     search: function() {
@@ -42,3 +53,5 @@ document
       weather.search();
     }
   });
+
+  weather.fetchWeather("Atlanta");
