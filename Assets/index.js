@@ -2,10 +2,10 @@
     apiKey: "8854f12c8ed8e64ffd06b1b0e0c9f7be",
     fetchWeather: function (city) {
       fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=" +
-          city +
-          "&units=metric&appid=" +
-          this.apiKey
+        "https://api.openweathermap.org/data/2.5/weather?q=" 
+          + city +
+          "&units=metric&appid=" 
+          + this.apiKey
       )
          .then((response) => {
            if (!response.ok) {
