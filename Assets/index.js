@@ -23,7 +23,7 @@ const weather = {
         // her im console logging the weather data
         console.log( name, icon, description, temp, humidity, speed );
         // returns the first Element within the document that matches the specified selector, or group of selectors
-        document.querySelector(".city").innerText =`weather in${name}`;
+        document.querySelector(".city").innerText =`weatherin${name}`;
         document.querySelector(".icon").src =`https://openweathermap.org/img/wn/${icon}.png`;
         document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = `temp:°c`;
